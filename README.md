@@ -1,5 +1,5 @@
 # docker-nginx-php
-Docker compose nginx 1.10.3 + php 7
+Docker nginx 1.10.3 + php 7
 
 Usage
 
