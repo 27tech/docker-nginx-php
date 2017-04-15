@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+ php:
+  image: php:7-fpm-alpine
+  ports:
+   - "9000:9000"
+  volumes:
+   - ./html:/var/www/html
+  networks:
+   - 27tech
+
+ nginx:
+  image: 27tech/nginx-php
+  links:
+    - php
+  ports:
+   - "8080:80"
+  volumes:
+   - ./html:/var/www/html
+  networks:
+   - 27tech
+networks:
+  27tech:
+   driver: bridge
